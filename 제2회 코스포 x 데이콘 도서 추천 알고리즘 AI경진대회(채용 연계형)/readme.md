@@ -2,6 +2,9 @@
 
 - 기간 : 2023년 4월 17일 ~ 2023년 5월 15일
 - Top 2%(11/679)
+
+## Score
+- 평가 산식 : RMSE(Root Mean Squared Error)
 - private score : 3.28403
 - public score : 3.2741
 
