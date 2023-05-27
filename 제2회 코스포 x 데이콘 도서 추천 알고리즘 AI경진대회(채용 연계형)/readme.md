@@ -23,7 +23,9 @@
 
 ## Modeling
 - 총 87만개의 데이터 중에서 평점이 0인 경우가 55만개, 1점과 2점은 각각 1만개 이하로 imbalance한 분포를 가지고 있음
-  -  oversampling, undersampling을 진행하 봤을 때 score가 낮게 나와서 weighted ensemble을 사용
+  -  oversampling, undersampling을 적용 했을 때 score가 약 3.9로 성능이 좋지 않았음
+    -  데이터가 imbalance하기 때문에 성능이 안좋게 나온 것으로 예상됨
+  -  weighted ensemble을 사용
   
 - AutoGluon(weighted ensemble) 사용
   - num_stack_levels = 2, 2 보다 클 경우 과적합 발생
