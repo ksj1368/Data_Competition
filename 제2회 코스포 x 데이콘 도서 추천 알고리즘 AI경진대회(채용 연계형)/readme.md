@@ -11,10 +11,22 @@
 ## 데이터 전처리
 - 고객의 나이가 100세 이상 또는 3세 이하일 경우 평균 나이로 대체
 - 고객의 나이를 범주화(10대 ~ 60대 이상)
-- 특수문자, 숫자 제거
+- 특수문자 제거
+  ```python
+  import re
+  train["Book-Author"] = train["Book-Author"].apply(lambda ba : re.sub(r'[^a-zA-Z\s]', '', ba))
+  
+  # 좌우 공백 제거
+  train["Book-Author"] = train["Book-Author"].apply(lambda ba : ba.strip())
+  len(sorted(train["Book-Author"].unique())) # 89004
+  
+  # 여러 개의 공백을 하나의 공백으로 변경
+  train["Book-Author"] = train["Book-Author"].apply(lambda ba : ' '.join(ba.split()))
+  len(sorted(train["Book-Author"].unique())) # 88649
+  ```
   - 단, 책 제목, 출판사의 경우 숫자로만 이루어진 경우가 있기 떄문에 특수문자만 제거(예 : 조지 오웰의 1984)
 - 최대한 카테고리를 줄이기 위해 모든 문자열을 소문자로 변경, 공백 제거
-
+  
 - 고객의 거주 지역 null, 이상치 제거
   - 단일 문자로만 이루어진 경우(예 : xx, aaaaa)
   - null값의 경우 na, n/a, "" 등 다양하게 표현되어 있음
@@ -22,6 +34,8 @@
   - 공백인 경우
 
 ## Modeling
+![image](https://github.com/ksj1368/Dacon/assets/83360918/a9f25086-e7e9-4846-8aa3-25d8a9b616fe)
+
 - 총 87만개의 데이터 중에서 평점이 0인 경우가 55만개, 1점과 2점은 각각 1만개 이하로 imbalance한 분포를 가지고 있음
   -  oversampling, undersampling을 적용 했을 때 score가 약 3.9로 성능이 좋지 않았음
     -  데이터가 imbalance하기 때문에 성능이 안좋게 나온 것으로 예상됨
