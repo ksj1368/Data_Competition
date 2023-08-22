@@ -10,6 +10,10 @@
 
 ## 데이터 전처리
 - 음성 소음제거를 하려고 했으나 이어폰의 노이즈라고 판단하여 전처리는 진행하지 않음
+- 푸리에 변환 진행
+
+![image](https://github.com/ksj1368/Dacon/assets/83360918/aa263ff1-4d11-4875-b31a-a30db28e89be)
+
 - MFCC 진행
 ## Modeling
 - LSTM을 진행하였으나 성능이 좋지 않았음
