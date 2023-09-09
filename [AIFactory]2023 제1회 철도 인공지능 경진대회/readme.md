@@ -47,4 +47,6 @@
 - activation : Selu
 - optimizer : Nadam
 ## 피드백
-- 
+- pca를 통한 feature Engineering
+- 물리, 철도 도메인 부족으로 인한 한계가 느껴졌음
+- 탈선은 주로 곡선 선로에서 발생한다고 느꼈고 실제 직선 선로의 loss와 곡선 선로의 loss에서 곡선 선로의 loss가 더 높았음
