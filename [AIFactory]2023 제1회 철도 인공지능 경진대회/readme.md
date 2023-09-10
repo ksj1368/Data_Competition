@@ -45,7 +45,11 @@
 ## Modeling
 - 1D-CNN + LSTM
 - activation : Selu
+  - 음의 부호를 가진 탈선계수를 예측하기 위해서 사용
 - optimizer : Nadam
+  - NAG + Adam
+  - Adam보다 최소값으로 빨리 수렴
+  - 실제로 Adam을 사용했을 때의 성능보다 Nadam을 사용했을 때의 성능이 더 좋았음
 ## 피드백
 - pca를 통한 feature Engineering
 - 물리, 철도 도메인 부족으로 인한 한계가 느껴졌음
