@@ -133,20 +133,3 @@ class LitJigsawElectra(L.LightningModule):
     def predict_step(self, batch)                    # 추론 스텝
 ```
 
-## 실행 방법
-### 환경 설정
-```bash
-pip install lightning transformers einops segmentation-models-pytorch timm
-```
-
-### 학습 실행
-```python
-trainer = L.Trainer(max_epochs=100, precision='16', callbacks=[checkpoint_callback, earlystopping_callback])
-trainer.fit(lit_jigsaw_electra, train_dataloader, val_dataloader)
-```
-
-### 추론 실행
-```python
-preds = trainer.predict(lit_jigsaw_electra, pred_dataloader)
-```
-
