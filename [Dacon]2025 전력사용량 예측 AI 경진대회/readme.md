@@ -300,6 +300,7 @@ exclude_cols = ['일시', 'num_date_time', 'is_weekday', 'time_period', 'busines
 - XGBoost, LGBM, Crossformer로 실험 진행
 ### 실험 결과
 - 단일 XGBoost 앙상블의 예측 성능이 가장 뛰어나 **단일 XGBoost** 앙상블만 활용
+
 | 모델 | 구성/가중치 | SMAPE |
 |--|--|--|
 | xgb best1 + best2 | 0.8 / 0.2 | 5.6016190137 |
